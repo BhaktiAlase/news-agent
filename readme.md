@@ -1,0 +1,61 @@
+name: 🤖 Daily News Agent
+
+on:
+  schedule:
+    # Runs at 3:30 AM UTC = 9:00 AM IST
+    # Adjust for your timezone: https://crontab.guru
+    - cron: '30 3 * * *'
+
+  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
+    inputs:
+      country:
+        description: 'Country code (us, in, gb, etc.)'
+        required: false
+        default: 'us'
+      category:
+        description: 'Category (business, technology, health, etc.)'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Dry run (true/false)'
+        required: false
+        default: 'false'
+
+jobs:
+  send-news-briefing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 📦 Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: 🚀 Run News Agent
+        env:
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_WHATSAPP_FROM: ${{ secrets.TWILIO_WHATSAPP_FROM }}
+          MY_WHATSAPP_NUMBER: ${{ secrets.MY_WHATSAPP_NUMBER }}
+        run: |
+          ARGS="--once"
+          if [ "${{ github.event.inputs.country }}" != "" ]; then
+            ARGS="$ARGS --country ${{ github.event.inputs.country }}"
+          fi
+          if [ "${{ github.event.inputs.category }}" != "" ]; then
+            ARGS="$ARGS --category ${{ github.event.inputs.category }}"
+          fi
+          if [ "${{ github.event.inputs.dry_run }}" == "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          python main.py $ARGS

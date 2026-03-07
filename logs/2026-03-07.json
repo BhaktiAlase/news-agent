@@ -1,0 +1,76 @@
+[
+  {
+    "timestamp": "2026-03-07T16:56:49.733672",
+    "status": "error",
+    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "elapsed_seconds": 6.36
+  },
+  {
+    "timestamp": "2026-03-07T16:57:45.037041",
+    "status": "error",
+    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "elapsed_seconds": 4.6
+  },
+  {
+    "timestamp": "2026-03-07T17:05:50.812193",
+    "status": "error",
+    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-or-v1*************************************************************6395. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}",
+    "elapsed_seconds": 2.43
+  },
+  {
+    "timestamp": "2026-03-07T17:08:11.423991",
+    "status": "error",
+    "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: sk-or-v1*************************************************************6395. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'code': 'invalid_api_key', 'param': None}, 'status': 401}",
+    "elapsed_seconds": 2.02
+  },
+  {
+    "timestamp": "2026-03-07T17:15:34.284476",
+    "status": "error",
+    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "elapsed_seconds": 6.91
+  },
+  {
+    "timestamp": "2026-03-07T17:17:16.857495",
+    "status": "error",
+    "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
+    "elapsed_seconds": 4.65
+  },
+  {
+    "timestamp": "2026-03-07T17:21:00.297580",
+    "status": "success",
+    "articles_fetched": 5,
+    "summary_length": 1555,
+    "message_length": 1749,
+    "elapsed_seconds": 2.72,
+    "country": "us",
+    "category": null,
+    "dry_run": true
+  },
+  {
+    "timestamp": "2026-03-07T17:22:11.690244",
+    "status": "success",
+    "articles_fetched": 5,
+    "summary_length": 1869,
+    "message_length": 2063,
+    "elapsed_seconds": 4.7,
+    "country": "us",
+    "category": null,
+    "dry_run": false
+  },
+  {
+    "timestamp": "2026-03-07T17:24:22.903709",
+    "status": "no_news",
+    "message": "\u26a0\ufe0f No news articles found today. Will retry tomorrow."
+  },
+  {
+    "timestamp": "2026-03-07T17:25:14.616257",
+    "status": "success",
+    "articles_fetched": 5,
+    "summary_length": 1908,
+    "message_length": 2102,
+    "elapsed_seconds": 4.25,
+    "country": "US",
+    "category": null,
+    "dry_run": false
+  }
+]
