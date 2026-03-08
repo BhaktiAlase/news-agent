@@ -1,16 +1,13 @@
 """
-Uses OpenAI GPT to summarize news articles into a WhatsApp-friendly format.
+Uses Groq LLM to summarize news articles into a WhatsApp-friendly format.
 """
 
 from datetime import datetime
 from typing import List, Dict
-from openai import OpenAI
+from groq import Groq
 from config import GROQ_API_KEY, GROQ_MODEL
 
-client = OpenAI(
-    api_key=GROQ_API_KEY,
-    base_url="https://api.groq.com/openai/v1",
-)
+client = Groq(api_key=GROQ_API_KEY)
 
 SYSTEM_PROMPT = """You are a professional yet friendly news anchor who delivers 
 a daily briefing via WhatsApp. Your style is:
